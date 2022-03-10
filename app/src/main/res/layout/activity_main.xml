@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawerL"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:menu="@menu/nav_menu"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:background="#00FFFFFF"
+            android:backgroundTint="#00ECE7E7"
+            android:elevation="10dp"
+            android:foregroundTint="#00FFFFFF"
+            android:foregroundTintMode="add"
+            app:navigationIcon="@drawable/ic_baseline_menu_24">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:drawablePadding="5dp"
+                    android:gravity="center"
+                    android:paddingRight="10dp"
+                    android:text="1st Main Road"
+                    android:textColor="#FFFFFF"
+                    app:drawableRightCompat="@drawable/ic_arrow_down_24"
+                    app:drawableLeftCompat="@drawable/ic_location_on" />
+
+            </RelativeLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+        <FrameLayout
+            android:id="@+id/frameL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/btmNav"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="false"
+            android:layout_marginTop="-10dp"
+            android:nestedScrollingEnabled="true" />
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/btmNav"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:background="#FFFFFF"
+            app:menu="@menu/bottom_nav" />
+
+    </RelativeLayout>
+
+</androidx.drawerlayout.widget.DrawerLayout>
